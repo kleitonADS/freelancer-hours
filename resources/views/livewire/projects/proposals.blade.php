@@ -1,3 +1,1 @@
-<div>
-    Componete proposal
-</div>
+<x-proposals :proposals="$project->proposals" />
