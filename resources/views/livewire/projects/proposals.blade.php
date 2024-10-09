@@ -1,0 +1,3 @@
+<div>
+    Componete proposal
+</div>
