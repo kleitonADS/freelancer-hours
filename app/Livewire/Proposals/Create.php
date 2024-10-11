@@ -12,7 +12,7 @@ class Create extends Component
 {
 
     public Project $project;
-    public bool $modal = true;
+    public bool $modal = false;
 
     #[Rule(['required', 'email'])]
     public string $email = '';
@@ -24,11 +24,14 @@ class Create extends Component
 
     public function save(){
 
-        if(!this->$agree){
-            $this->addError('agree', 'Você precisa concordar com os termos de uso');
-        }
+
 
         $this->validate();
+
+        if(!$this->agree){
+            $this->addError('agree', 'Você precisa concordar com os termos de uso');
+            return;
+        }
 
         $this->project->proposals()
 
