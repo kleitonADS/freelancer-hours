@@ -4,7 +4,7 @@
 
         <a href="{{ route('projects.show', $project) }}">
 
-            <x-project-card-simple :$project />
+            <x-projects.card-simple :$project />
 
         </a>
 
